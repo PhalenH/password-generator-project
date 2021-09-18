@@ -14,16 +14,24 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-// ```
+// ^^^ acceptance criteria will have code in it
 // GIVEN I need a new, secure password
+
+
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
+// var prompts = ["random1", "password2", "guess3"]
+// max = prompts.length;
+// conesole.log(prompts[Math.floor(Math.random() * max)]);
+
+
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
+// 
+
+
 // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 characters
-
-// ^^^ acceptance criteria will have code in it
 // if length of password is >=8 and <=128
 // the password is valid
 // else
@@ -39,8 +47,12 @@ generateBtn.addEventListener("click", writePassword);
 
 // WHEN I answer each prompt
 // THEN my input should be validated and at least one character type should be selected
+
+
 // WHEN all prompts are answered
 // THEN a password is generated that matches the selected criteria
+
+
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page
 // alert("Password is: ...") anthony said prefers it's written to page
