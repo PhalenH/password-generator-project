@@ -20,9 +20,9 @@ generateBtn.addEventListener("click", writePassword);
 
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
-// var prompts = ["random1", "password2", "guess3"]
-// max = prompts.length;
-// conesole.log(prompts[Math.floor(Math.random() * max)]);
+// var prompts = ["uppercase", "lowercase", "numeric", "special characters"];
+// for (var i=0; i < prompts.length, i++) {
+//  console.log(`this prompt includes ${prompt[i]} in your password');
 
 
 // WHEN prompted for password criteria
@@ -57,3 +57,7 @@ generateBtn.addEventListener("click", writePassword);
 // THEN the password is either displayed in an alert or written to the page
 // alert("Password is: ...") anthony said prefers it's written to page
 // ```
+
+
+// max = var.length;
+// conesole.log(var[Math.floor(Math.random() * max)]);
