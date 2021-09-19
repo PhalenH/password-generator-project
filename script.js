@@ -39,31 +39,35 @@ function generatePassword() {
     return "Try again"; 
   }
 
-  var lowerCase =confirm("Do you want lowercase letters to be included?")
-  if(lowerCase == true){
+  var lowerCase = confirm("Do you want lowercase letters to be included?")
+  if(lowerCase){
     passwordCharacters += letters;
   }
-  var upperCase =confirm("Do you want uppercase letters to be included?")
-  if(upperCase == true){
+
+  var upperCase = confirm("Do you want uppercase letters to be included?")
+  if(upperCase){
     passwordCharacters += capital;
   }
 
   var num = confirm("Do you want numbers to be included?")
-  if(num == true){
+  if(num){
     passwordCharacters += numbers;
   }
 
   var special = confirm("Do you want special characters to be included?")
-  if(special == true){
+  if(special){
     passwordCharacters += unique;
   }
-
-  const passwordCharactersArray = passwordCharacters.split("")
-  for (var i = 0; i < passwordLength; i++){
-    finalPassword += passwordCharactersArray[Math.floor(Math.random() * passwordCharactersArray.length)]
-    console.log(finalPassword)
+  
+  if (passwordCharacters){
+    const passwordCharactersArray = passwordCharacters.split("")
+    for (var i = 0; i < passwordLength; i++){
+      finalPassword += passwordCharactersArray[Math.floor(Math.random() * passwordCharactersArray.length)]
+      console.log(finalPassword)
+    }
+    return finalPassword;
   }
-  return finalPassword;
+    return "Please select criteria"
 }
 
 // I need to find out how hitting confirm will include the criteria in final password
