@@ -16,6 +16,13 @@ generateBtn.addEventListener("click", writePassword);
 
 // ^^^ acceptance criteria will have code in it
 // GIVEN I need a new, secure password
+var max = 10
+var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
+var capLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
+var numbers = Math.floor(Math.random() * max)
+//[0, 1, 2, 3, 4, 5, 6, 7, 8, 9] -- do i need this if the math.floor works?
+var unique = ["!", "@", "#", "$", "%", ">", "<", "&", "~", "+", "-"]
+
 function generatePassword() {
   var passwordLength = prompt("Choose a number between 8 and 128 to determine length of your password.");
 
@@ -27,11 +34,11 @@ function generatePassword() {
     return "Try again"; 
   }//--how do I add more prompts but also stop it here if they don't enter a valid response?
 
-  var upperCase = confirm("Do you want uppercase letters to be included?")
+  var upperCase =confirm("Do you want uppercase letters to be included?")
 
   var numbers = confirm("Do you want numbers to be included?")
 
-  var special = confirm("Do you want special cahracters to be included?")
+  var special = confirm("Do you want special characters to be included?")
 
 }
 // WHEN I click the button to generate a password
@@ -42,10 +49,6 @@ function generatePassword() {
 // THEN I select which criteria to include in the password
 // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 characters
-// if length of password is >=8 and <=128
-// the password is valid
-// else
-// the password in invalid
 
 // WHEN asked for character types to include in the password
 // THEN I CONFIRM whether or not to include lowercase, uppercase, numeric, and/or special characters
