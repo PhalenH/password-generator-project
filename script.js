@@ -22,14 +22,15 @@ generateBtn.addEventListener("click", writePassword);
 // var numbers = Math.floor(Math.random() * max)
 // var unique = ["!", "@", "#", "$", "%", ">", "<", "&", "*, "~", "+", "-"]
 
-// var letters = "abcdefghijklmnopqrstuvwxyz";
-// var capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// var numbers = "0123456789"
-// var unique = "!@#$%^&*~+-()"
-
-
 function generatePassword() {
   var passwordLength = prompt("Choose a number between 8 and 128 to determine length of your password.");
+  const letters = "abcdefghijklmnopqrstuvwxyz";
+  const capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const numbers = "0123456789";
+  const unique = "!@#$%^&*~+-()";
+  let passwordCharacters = "";
+  let finalPassword = "";
+  
 
   if (passwordLength >= 8 && passwordLength <= 128){
   }
@@ -38,29 +39,37 @@ function generatePassword() {
     return "Try again"; 
   }
 
-  var lowerCase =confirm("Do you want uppercase letters to be included?")
-  if(lowerCase){
-    
+  var lowerCase =confirm("Do you want lowercase letters to be included?")
+  if(lowerCase == true){
+    passwordCharacters += letters;
   }
   var upperCase =confirm("Do you want uppercase letters to be included?")
-  if(upperCase){
-    
+  if(upperCase == true){
+    passwordCharacters += capital;
   }
 
-  var numbers = confirm("Do you want numbers to be included?")
-  if(numbers){
-    
+  var num = confirm("Do you want numbers to be included?")
+  if(num == true){
+    passwordCharacters += numbers;
   }
 
   var special = confirm("Do you want special characters to be included?")
-  if(special){
-    
+  if(special == true){
+    passwordCharacters += unique;
   }
+
+  const passwordCharactersArray = passwordCharacters.split("")
+  for (var i = 0; i < passwordLength; i++){
+    finalPassword += passwordCharactersArray[Math.floor(Math.random() * passwordCharactersArray.length)]
+    console.log(finalPassword)
+  }
+  return finalPassword;
 }
+
 // I need to find out how hitting confirm will include the criteria in final password
 // Can I define a function based on a condition, so like if the user confirms, then use this, if not it's not included
 // at some point I know i'll have to add passwordLength to a function to assign the exact number of characters for the password
-
+// array.split
 // I'll need passwords for combinations including:
 
 // lower 
