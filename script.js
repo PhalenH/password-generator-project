@@ -14,42 +14,52 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-// ^^^ acceptance criteria will have code in it
+
 // GIVEN I need a new, secure password
-var max = 10
-var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
-var capLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I"];
-var numbers = Math.floor(Math.random() * max)
-//[0, 1, 2, 3, 4, 5, 6, 7, 8, 9] -- do i need this if the math.floor works?
-var unique = ["!", "@", "#", "$", "%", ">", "<", "&", "~", "+", "-"]
+// var max = 10
+// var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]; -- don't think i need these
+// var capLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]; -- don't think i need these
+// var numbers = Math.floor(Math.random() * max)
+// var unique = ["!", "@", "#", "$", "%", ">", "<", "&", "~", "+", "-"]
+// var basic = "abcdefghijklmnopqrstuvwxyz";
+// var capital = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
 
 function generatePassword() {
   var passwordLength = prompt("Choose a number between 8 and 128 to determine length of your password.");
 
   if (passwordLength >= 8 && passwordLength <= 128){
-    alert("valid");
   }
   else {
     alert("Invalid: please enter a number between 8 to 128.");
     return "Try again"; 
-  }//--how do I add more prompts but also stop it here if they don't enter a valid response?
+  }
 
   var upperCase =confirm("Do you want uppercase letters to be included?")
+  if(upperCase){
+    
+  }
 
   var numbers = confirm("Do you want numbers to be included?")
+  if(numbers){
+    
+  }
 
   var special = confirm("Do you want special characters to be included?")
+  if(special){
+    
+  }
 
 }
+// I need to find out how hitting confirm will include the criteria in final password
+// at some point I know i'll have to add passwordLength to a function to assign the exact number of characters for the password
+
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
-
-
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
 // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 characters
-
 // WHEN asked for character types to include in the password
 // THEN I CONFIRM whether or not to include lowercase, uppercase, numeric, and/or special characters
 // var lowercase = true/false
