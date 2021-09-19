@@ -17,22 +17,29 @@ generateBtn.addEventListener("click", writePassword);
 // ^^^ acceptance criteria will have code in it
 // GIVEN I need a new, secure password
 function generatePassword() {
-  var passwordLength = prompt("Choose how many character you want your password to be (min: 8 / max: 128)");
+  var passwordLength = prompt("Choose a number between 8 and 128 to determine length of your password.");
+
+  if (passwordLength >= 8 && passwordLength <= 128){
+    alert("valid");
+  }
+  else {
+    alert("Invalid: please enter a number between 8 to 128.");
+    return "Try again"; 
+  }//--how do I add more prompts but also stop it here if they don't enter a valid response?
+
+  var upperCase = confirm("Do you want uppercase letters to be included?")
+
+  var numbers = confirm("Do you want numbers to be included?")
+
+  var special = confirm("Do you want special cahracters to be included?")
+
 }
-
-
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
-// var prompts = ["uppercase", "lowercase", "numeric", "special characters"];
-// for (var i=0; i < prompts.length, i++) {
-//  console.log(`this prompt includes ${prompt[i]} in your password');
 
 
 // WHEN prompted for password criteria
 // THEN I select which criteria to include in the password
-// 
-
-
 // WHEN prompted for the length of the password
 // THEN I choose a length of at least 8 characters and no more than 128 characters
 // if length of password is >=8 and <=128
