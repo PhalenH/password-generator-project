@@ -18,11 +18,14 @@ generateBtn.addEventListener("click", writePassword);
 // GIVEN I need a new, secure password
 // var max = 10
 // var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]; -- don't think i need these
-// var capLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]; -- don't think i need these
+// var capital = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]; -- don't think i need these
 // var numbers = Math.floor(Math.random() * max)
-// var unique = ["!", "@", "#", "$", "%", ">", "<", "&", "~", "+", "-"]
-// var basic = "abcdefghijklmnopqrstuvwxyz";
-// var capital = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// var unique = ["!", "@", "#", "$", "%", ">", "<", "&", "*, "~", "+", "-"]
+
+// var letters = "abcdefghijklmnopqrstuvwxyz";
+// var capital = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+// var numbers = "0123456789"
+// var unique = "!@#$%^&*~+-()"
 
 
 function generatePassword() {
@@ -35,6 +38,10 @@ function generatePassword() {
     return "Try again"; 
   }
 
+  var lowerCase =confirm("Do you want uppercase letters to be included?")
+  if(lowerCase){
+    
+  }
   var upperCase =confirm("Do you want uppercase letters to be included?")
   if(upperCase){
     
@@ -49,10 +56,29 @@ function generatePassword() {
   if(special){
     
   }
-
 }
 // I need to find out how hitting confirm will include the criteria in final password
+// Can I define a function based on a condition, so like if the user confirms, then use this, if not it's not included
 // at some point I know i'll have to add passwordLength to a function to assign the exact number of characters for the password
+
+// I'll need passwords for combinations including:
+
+// lower 
+// lower + upper
+// lower + num 
+// lower + special
+// lower + upper + num
+// lower + upper + special
+// lower + num + special
+// lower + upper + num + special
+// upper
+// num 
+// special
+// upper + num
+// upper + special
+// num + special
+// upper + num + special
+// 15 total
 
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
