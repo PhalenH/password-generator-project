@@ -16,6 +16,9 @@ generateBtn.addEventListener("click", writePassword);
 
 // ^^^ acceptance criteria will have code in it
 // GIVEN I need a new, secure password
+function generatePassword() {
+  var passwordLength = prompt("Choose how many character you want your password to be (min: 8 / max: 128)");
+}
 
 
 // WHEN I click the button to generate a password
@@ -38,7 +41,7 @@ generateBtn.addEventListener("click", writePassword);
 // the password in invalid
 
 // WHEN asked for character types to include in the password
-// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
+// THEN I CONFIRM whether or not to include lowercase, uppercase, numeric, and/or special characters
 // var lowercase = true/false
 //  var uppercase = true/false
 //  var numeric = true/false
