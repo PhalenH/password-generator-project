@@ -42,6 +42,7 @@ function generatePassword() {
   var lowerCase = confirm("Do you want lowercase letters to be included?")
   if(lowerCase){
     passwordCharacters += letters;
+    // += is the same as passwordCharacter = passwordCharacters + letters, and using + between 2 string values concatenates them
   }
 
   var upperCase = confirm("Do you want uppercase letters to be included?")
@@ -60,19 +61,19 @@ function generatePassword() {
   }
   
   if (passwordCharacters){
-    const passwordCharactersArray = passwordCharacters.split("")
-    for (var i = 0; i < passwordLength; i++){
-      finalPassword += passwordCharactersArray[Math.floor(Math.random() * passwordCharactersArray.length)]
-      console.log(finalPassword)
-    }
-    return finalPassword;
+    const passwordCharactersArray = passwordCharacters.split("") // - The split method divides up a string into an array based on the value you give, since I did "" it splits them all and gives me an array of all the characters selected
+    console.log(passwordCharactersArray) // -don't need this, just helps visualize the array and values were selecting from, !TODO - remove later!
+    for (var i = 0; i < passwordLength; i++){ // -since passwordCharactersArray is an array it will start at 0 and why password length can be < and doesn't have to be <=
+      finalPassword += passwordCharactersArray[Math.floor(Math.random() * passwordCharactersArray.length)] //- this multiplies a random decimal (0-.99) by my arraylength and gives me a # which math.floor makes into a whole number which access a value in the array
+      console.log(finalPassword)                                          //- and I want array.length so it can go up to the number assigned to the last array value
+    } // -the final password is looped through and a new character is added each time which gives me final expression
+    return finalPassword; //- putting this inside the for statement will only return the first value provided, keeping it on the outside ensures it takes the final expression
   }
-    return "Please select criteria"
+    return "Please select at least one of the criteria"
 }
 
-// I need to find out how hitting confirm will include the criteria in final password
 // Can I define a function based on a condition, so like if the user confirms, then use this, if not it's not included
-// at some point I know i'll have to add passwordLength to a function to assign the exact number of characters for the password
+// add passwordLength to a for loop so it loops until the condition is met or until it reached the password length
 // array.split
 // I'll need passwords for combinations including:
 
@@ -101,12 +102,6 @@ function generatePassword() {
 // THEN I choose a length of at least 8 characters and no more than 128 characters
 // WHEN asked for character types to include in the password
 // THEN I CONFIRM whether or not to include lowercase, uppercase, numeric, and/or special characters
-// var lowercase = true/false
-//  var uppercase = true/false
-//  var numeric = true/false
-//  var special = true/false
-
-
 // WHEN I answer each prompt
 // THEN my input should be validated and at least one character type should be selected
 
