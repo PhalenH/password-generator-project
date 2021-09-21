@@ -14,14 +14,6 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 
-
-// GIVEN I need a new, secure password
-// var max = 10
-// var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]; -- don't think i need these
-// var capital = ["A", "B", "C", "D", "E", "F", "G", "H", "I"]; -- don't think i need these
-// var numbers = Math.floor(Math.random() * max)
-// var unique = ["!", "@", "#", "$", "%", ">", "<", "&", "*, "~", "+", "-"]
-
 function generatePassword() {
   var passwordLength = prompt("Choose a number between 8 and 128 to determine length of your password.");
   const letters = "abcdefghijklmnopqrstuvwxyz";
@@ -60,39 +52,55 @@ function generatePassword() {
     passwordCharacters += unique;
   }
   
-  if (passwordCharacters){
-    const passwordCharactersArray = passwordCharacters.split("") // - The split method divides up a string into an array based on the value you give, since I did "" it splits them all and gives me an array of all the characters selected
-    console.log(passwordCharactersArray) // -don't need this, just helps visualize the array and values were selecting from, !TODO - remove later!
-    for (var i = 0; i < passwordLength; i++){ // -since passwordCharactersArray is an array it will start at 0 and why password length can be < and doesn't have to be <=
-      finalPassword += passwordCharactersArray[Math.floor(Math.random() * passwordCharactersArray.length)] //- this multiplies a random decimal (0-.99) by my arraylength and gives me a # which math.floor makes into a whole number which access a value in the array
-      console.log(finalPassword)                                          //- and I want array.length so it can go up to the number assigned to the last array value
-    } // -the final password is looped through and a new character is added each time which gives me final expression
-    return finalPassword; //- putting this inside the for statement will only return the first value provided, keeping it on the outside ensures it takes the final expression
+  var confirmNumber = 0 
+
+    const lettersArray = letters.split("")
+    if(lowerCase){
+      finalPassword += lettersArray[Math.floor(Math.random() * lettersArray.length)]
+      confirmNumber ++
+    }              
+    const captialArray = capital.split("")
+    if(upperCase){
+      finalPassword += captialArray[Math.floor(Math.random() * captialArray.length)]
+      confirmNumber ++
+    }   
+    const numbersArray = numbers.split("")
+    if(num){
+      finalPassword += numbersArray[Math.floor(Math.random() * numbersArray.length)]
+      confirmNumber ++
+    }   
+    const uniqueArray = unique.split("")
+    if(special){
+      finalPassword += uniqueArray[Math.floor(Math.random() * uniqueArray.length)]
+      confirmNumber ++
+    }     
+
+
+
+
+
+    if (passwordCharacters){
+      const passwordCharactersArray = passwordCharacters.split("")                                                        
+
+    for (var i = 0; i < passwordLength - confirmNumber; i++){ 
+      finalPassword += passwordCharactersArray[Math.floor(Math.random() * passwordCharactersArray.length)] 
+      console.log(finalPassword)                                       
+    }                                                           
+    return finalPassword;                                         
   }
     return "Please select at least one of the criteria"
 }
 
-// Can I define a function based on a condition, so like if the user confirms, then use this, if not it's not included
-// add passwordLength to a for loop so it loops until the condition is met or until it reached the password length
-// array.split
-// I'll need passwords for combinations including:
+// 83- The split method divides up a string into an array based on the value you give, since I did "" it splits them all and gives me an array of all the characters selecte
+// 85- since passwordCharactersArray is an array it will start at 0 and why password length can be < and doesn't have to be <=
+// 86- this multiplies a random decimal (0-.99) by my arraylength and gives me a # which math.floor makes into a whole number which access a value in the array
+// 87- and I want array.length so it can go up to the number assigned to the last array value
+// 88- the final password is looped through and a new character is added each time which gives me final expression
+// 89- putting this inside the for statement will only return the first value provided, keeping it on the outside ensures it takes the final expression
 
-// lower 
-// lower + upper
-// lower + num 
-// lower + special
-// lower + upper + num
-// lower + upper + special
-// lower + num + special
-// lower + upper + num + special
-// upper
-// num 
-// special
-// upper + num
-// upper + special
-// num + special
-// upper + num + special
-// 15 total
+// i could make a array split from each individual strings for lets, caps, nums, unique
+// confirm whether to include or not based on true/false
+
 
 // WHEN I click the button to generate a password
 // THEN I am presented with a series of prompts for password criteria
@@ -104,16 +112,11 @@ function generatePassword() {
 // THEN I CONFIRM whether or not to include lowercase, uppercase, numeric, and/or special characters
 // WHEN I answer each prompt
 // THEN my input should be validated and at least one character type should be selected
-
-
 // WHEN all prompts are answered
 // THEN a password is generated that matches the selected criteria
-
-
 // WHEN the password is generated
 // THEN the password is either displayed in an alert or written to the page
 // alert("Password is: ...") anthony said prefers it's written to page
-// ```
 
 
 // max = var.length;
