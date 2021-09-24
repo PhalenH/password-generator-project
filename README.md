@@ -15,6 +15,6 @@ I also had error validation in the code to ensure the password length was approp
 ## Finished Product
 
 Here is a screenshot and link to the finished Password Generator:
-[Link to webpage](https://phalenh.github.io/password-generator-project/index.html)
+[Link to webpage](https://phalenh.github.io/password-generator-project/main/index.html)
 
 ![Password Generator pase with a red button to click generate password.](./main/password-generator.png)
